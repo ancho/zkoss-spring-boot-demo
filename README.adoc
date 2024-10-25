@@ -1,0 +1,24 @@
+= Small Selenium Demo using Zkoss / Springboot
+
+This is just a sample Project to demonstrate a potential Bug in selenium
+using ChromeDriver for file uploads against basic auth protected pages.
+
+To reproduce the issue run `mvn test`
+
+The test executes two tests that upload a *.xlsx and *.txt file.
+The expectation is that the upload request contains the data payload of those files
+to further process it in the application.
+
+Instead, the transferred bytes are in both cases 0.
+
+The upload works in general when running the application with `mvn spring-boot:run`.
+Navigate to `http://localhost:8080/` and try uploading a File.
+
+The username is `user` the password is `password`.
+
+You should see a log message in the terminal console like this:
+
+`File uploaded with name: 'test-upload-file.txt' and size: 38`
+
+
+

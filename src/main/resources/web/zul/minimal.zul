@@ -1,7 +1,6 @@
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 <zk>
 	<window title="Minimal ZK Application" viewModel="@id('vm') @init('org.zkoss.zkspringboot.demo.FileUploadViewModel')">
-
 		<button id="uploadButton" sclass="uploadButton" label="Upload" upload="true" onUpload="@command('upload', event=event)"/>
 	</window>
 </zk>

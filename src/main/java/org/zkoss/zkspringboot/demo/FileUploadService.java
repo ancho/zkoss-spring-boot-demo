@@ -10,12 +10,14 @@ public class FileUploadService {
     Logger logger = LoggerFactory.getLogger(FileUploadService.class);
 
     public void uploadString(String name, String data) {
-        logger.debug("File uploaded with name: {}", name);
-        logger.debug("File uploaded with length: {}", data.length());
+        logFileUpload(name, data.length());
     }
 
     public void uploadBytes(String name, byte[] data) {
-        logger.debug("File uploaded with name: {}", name);
-        logger.debug("File uploaded with length: {}", data.length);
+        logFileUpload(name, data.length);
+    }
+
+    private void logFileUpload(String name, int length) {
+        logger.debug("File uploaded with name: '{}' and size: {}", name, length);
     }
 }
